@@ -1,300 +1,221 @@
-*{
-	padding: 0;
-	margin: 0;
-	border: 0;
-	max-width: 100%;
-  }
-
-.t-weatherbox{
-    background-image: url('sun.jpg');
-    background-repeat: no-repeat;
-    background-position: 70% 100%;
-    background-size: cover;
-    filter: blur(2px) brightness(70%);
-    max-width: 30%;
-    width: 30%;
-    height: 100vh;
-    position: relative;
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  max-width: 100%;
 }
 
-.t-weatherinfo{
-    position: absolute;
-    top: 0;
-    width: 30%;
-    height: 100vh;
-    z-index: 15;
-    font-family: 'Bebas Neue', cursive;
-    text-align: center;
-}   
-
-.t-controlbar{
-    height: 55px;
-    width: 30%;
-    z-index: 5;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.63);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+.t-weatherbox {
+  background-image: url("sun.jpg");
+  background-repeat: no-repeat;
+  background-position: 70% 100%;
+  background-size: cover;
+  filter: blur(2px) brightness(70%);
+  max-width: 30%;
+  width: 30%;
+  height: 100vh;
+  position: relative;
 }
 
-
-
-
-
-
-
-
-.t-city{
-    color: White;
-    text-shadow: 3px 3px 2px black;
-    font-size: 50px;
-    padding-top: 70px;
+.t-weatherinfo {
+  position: absolute;
+  top: 0;
+  width: 30%;
+  height: 100vh;
+  z-index: 15;
+  font-family: "Bebas Neue", cursive;
+  text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.t-temperaturecontainer{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+.t-controlbar {
+  height: 55px;
+  width: 30%;
+  z-index: 5;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.63);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-
-.t-temperature{
-    color: White;
-    text-shadow: 3px 3px 2px black;
-    font-size: 80px;
+.t-city {
+  color: White;
+  text-shadow: 3px 3px 2px black;
+  font-size: 50px;
+  padding-top: 70px;
 }
 
-.t-minmax{
-    margin-left: 15px;
+.t-temperaturecontainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.t-mintemperature{
-    color: White;
-    text-shadow: 2px 2px 2px black;
-    font-size: 30px;
-    border-bottom: 3px solid white;
+.t-temperature {
+  color: White;
+  text-shadow: 3px 3px 2px black;
+  font-size: 80px;
 }
 
-.t-maxtemperature{
-    color: White;
-    text-shadow: 2px 2px 2px black;
-    font-size: 30px;
+.t-minmax {
+  margin-left: 15px;
 }
 
-.t-temperature, .t-minmax{
-    display: inline;
+.t-mintemperature {
+  color: White;
+  text-shadow: 2px 2px 2px black;
+  font-size: 30px;
+  border-bottom: 3px solid white;
 }
 
-
-
-
-
-
-
-.t-etcinfo{
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
+.t-maxtemperature {
+  color: White;
+  text-shadow: 2px 2px 2px black;
+  font-size: 30px;
 }
 
-
-
-
-
-
-
-
-
-
-.t-humidity{
-    display: flex;
-    justify-content: center;
-    padding-right: 15px;
-    border-right: 2px solid white;
+.t-etcinfo {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
 
-.t-humidityimg{
-    height: 50px;
-    line-height: 50px;
-    filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg) brightness(117%) contrast(100%);
+.t-humidity {
+  display: flex;
+  justify-content: center;
+  padding-right: 15px;
+  border-right: 2px solid white;
 }
 
-.t-humiditytext{
-    font-size: 20px;
-    color: white;
-    line-height: 50px;
-    margin-left: 10px;
+.t-humidityimg {
+  height: 50px;
+  line-height: 50px;
+  filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg)
+    brightness(117%) contrast(100%);
 }
 
-
-
-
-
-
-
-
-
-.t-air-pressure{
-    display: flex;
-    justify-content: center;
-    padding-left: 15px;
-    
+.t-humiditytext {
+  font-size: 20px;
+  color: white;
+  line-height: 50px;
+  margin-left: 10px;
 }
 
-.t-air-pressureimg{
-    height: 50px;
-    line-height: 50px;
-    filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg) brightness(117%) contrast(100%);
+.t-air-pressure {
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
 }
 
-.t-air-pressuretext{
-    font-size: 20px;
-    color: white;
-    line-height: 50px;
-    margin-left: 10px;
+.t-air-pressureimg {
+  height: 50px;
+  line-height: 50px;
+  filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg)
+    brightness(117%) contrast(100%);
 }
 
-
-
-
-.t-sun{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
+.t-air-pressuretext {
+  font-size: 20px;
+  color: white;
+  line-height: 50px;
+  margin-left: 10px;
 }
 
-
-
-
-
-
-
-
-.t-sunrise{
-    display: flex;
-    justify-content: center;
-    padding-right: 15px;
-    border-right: 2px solid white;
+.t-sun {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
-.t-sunrise img{
-    height: 50px;
-    line-height: 50px;
-    filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg) brightness(117%) contrast(100%);
+.t-sunrise {
+  display: flex;
+  justify-content: center;
+  padding-right: 15px;
+  border-right: 2px solid white;
 }
 
-.t-sunrise p{
-    font-size: 20px;
-    color: white;
-    line-height: 50px;
-    margin-left: 10px;
+.t-sunrise img {
+  height: 50px;
+  line-height: 50px;
+  filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg)
+    brightness(117%) contrast(100%);
 }
 
-
-
-
-
-.t-sunset{
-    display: flex;
-    justify-content: center;
-    padding-left: 15px;
+.t-sunrise p {
+  font-size: 20px;
+  color: white;
+  line-height: 50px;
+  margin-left: 10px;
 }
 
-.t-sunset img{
-    height: 50px;
-    line-height: 50px;
-    filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg) brightness(117%) contrast(100%);
+.t-sunset {
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
 }
 
-.t-sunset p{
-    font-size: 20px;
-    color: white;
-    line-height: 50px;
-    margin-left: 10px;
+.t-sunset img {
+  height: 50px;
+  line-height: 50px;
+  filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg)
+    brightness(117%) contrast(100%);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.t-moon{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    display: flex;
-    justify-content: center;
+.t-sunset p {
+  font-size: 20px;
+  color: white;
+  line-height: 50px;
+  margin-left: 10px;
 }
 
-
-
-
-
-
-
-
-.t-moonrise{
-    display: flex;
-    justify-content: center;
-    padding-right: 15px;
-    border-right: 2px solid white;
+.t-moon {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
 }
 
-.t-moonrise img{
-    height: 50px;
-    line-height: 50px;
-    filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg) brightness(117%) contrast(100%);
+.t-moonrise {
+  display: flex;
+  justify-content: center;
+  padding-right: 15px;
+  border-right: 2px solid white;
 }
 
-.t-moonrise p{
-    font-size: 20px;
-    color: white;
-    line-height: 50px;
-    margin-left: 10px;
+.t-moonrise img {
+  height: 50px;
+  line-height: 50px;
+  filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg)
+    brightness(117%) contrast(100%);
 }
 
-
-
-
-
-.t-moonset{
-    display: flex;
-    justify-content: center;
-    padding-left: 15px;
+.t-moonrise p {
+  font-size: 20px;
+  color: white;
+  line-height: 50px;
+  margin-left: 10px;
 }
 
-.t-moonset img{
-    height: 50px;
-    line-height: 50px;
-    filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg) brightness(117%) contrast(100%);
+.t-moonset {
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
 }
 
-.t-moonset p{
-    font-size: 20px;
-    color: white;
-    line-height: 50px;
-    margin-left: 10px;
+.t-moonset img {
+  height: 50px;
+  line-height: 50px;
+  filter: invert(98%) sepia(5%) saturate(605%) hue-rotate(155deg)
+    brightness(117%) contrast(100%);
+}
+
+.t-moonset p {
+  font-size: 20px;
+  color: white;
+  line-height: 50px;
+  margin-left: 10px;
 }
