@@ -11,7 +11,11 @@
   </head>
   <body>
     <link rel="stylesheet" href="index.css" />
-    <div class="t-controlbar"></div>
+    <div class="t-controlbar">
+      <button onclick="csere(); animation()" class="t-volume">
+        <img class="t-volumeimg" src="icons/volume.png" />
+      </button>
+    </div>
     <div class="t-weatherbox"></div>
     <div class="t-weatherinfo">
       <p class="t-city">Szabadka</p>
@@ -55,6 +59,20 @@
       </div>
     </div>
 
-    <script></script>
+    <script>
+      function csere() {
+        var x = document.querySelector(".t-volumeimg").src;
+        if (x == "http://127.0.0.1:5500/Tomi/icons/volume.png") {
+          document.querySelector(".t-volumeimg").src =
+            "http://127.0.0.1:5500/Tomi/icons/no-sound.png";
+        } else {
+          document.querySelector(".t-volumeimg").src =
+            "http://127.0.0.1:5500/Tomi/icons/volume.png";
+        }
+      }
+      function animation() {
+        document.querySelector(".t-volumeimg").className = "animation";
+      }
+    </script>
   </body>
 </html>
