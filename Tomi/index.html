@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta List="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
     </style>
@@ -12,7 +12,7 @@
   <body>
     <link rel="stylesheet" href="index.css" />
     <div class="t-controlbar">
-      <button class="t-volume">
+      <button class="t-volume" onclick="csere(), animation()">
         <img class="t-volumeimg" src="icons/volume.png" />
       </button>
     </div>
@@ -61,23 +61,24 @@
 
     <script>
       function csere() {
+        var fullurl = window.location.href;
+        var link = fullurl.replace("index.html", "");
+        var link = link + "icons/";
+
         var x = document.querySelector(".t-volumeimg").src;
-        if (x == "http://127.0.0.1:5500/Tomi/icons/volume.png") {
-          document.querySelector(".t-volumeimg").src =
-            "http://127.0.0.1:5500/Tomi/icons/no-sound.png";
+        if (x == link + "volume.png") {
+          document.querySelector(".t-volumeimg").src = link + "no-sound.png";
         } else {
-          document.querySelector(".t-volumeimg").src =
-            "http://127.0.0.1:5500/Tomi/icons/volume.png";
+          document.querySelector(".t-volumeimg").src = link + "volume.png";
         }
       }
-      function animation() {
-        document.querySelector(".t-volumeimg").className = "animation";
-      }
 
-      document.querySelector(".t-volume").addEventListener("click", csere());
-      document
-        .querySelector(".t-volume")
-        .addEventListener("click", animation());
+      function animation() {
+        document.querySelector(".t-volumeimg").classList.add("animation");
+        setTimeout(function () {
+          document.querySelector(".t-volumeimg").classList.remove("animation");
+        }, 300);
+      }
     </script>
   </body>
 </html>
