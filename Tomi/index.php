@@ -71,7 +71,7 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
     <script>
       function csere() {
         var fullurl = window.location.href;
-        var link = fullurl.replace("index.html", "");
+        var link = fullurl.replace("index.php", "");
         var link = link + "icons/";
 
         var x = document.querySelector(".t-volumeimg").src;
