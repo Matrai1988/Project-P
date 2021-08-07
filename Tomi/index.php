@@ -1,3 +1,9 @@
+<?php 
+$xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47&mode=xml");
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,23 +24,26 @@
     </div>
     <div class="t-weatherbox"></div>
     <div class="t-weatherinfo">
-      <p class="t-city">Szabadka</p>
+      <p class="t-city"><?php echo$xml->city['name']?></p>
       <div class="t-temperaturecontainer">
-        <p class="t-temperature">53 C°</p>
+        <p class="t-temperature"><?php $tv = $xml->temperature['value'] - 273.15;
+         echo round($tv); ?>°C</p>
 
         <div class="t-minmax">
-          <p class="t-mintemperature">40 C°</p>
-          <p class="t-maxtemperature">60 C°</p>
+          <p class="t-mintemperature"><?php $tmin = $xml->temperature['min'] - 273.15;
+         echo round($tmin); ?>°C</p>
+          <p class="t-maxtemperature"><?php $tmax = $xml->temperature['max'] - 273.15;
+         echo round($tmax); ?>°C</p>
         </div>
       </div>
       <div class="t-etcinfo">
         <div class="t-humidity">
           <img class="t-humidityimg" src="icons/humidity.png" />
-          <p class="t-humiditytext">25%</p>
+          <p class="t-humiditytext"><?php echo $xml->humidity['value'];?> %</p>
         </div>
         <div class="t-air-pressure">
           <img class="t-air-pressureimg" src="icons/barometer.png" />
-          <p class="t-air-pressuretext">25%</p>
+          <p class="t-air-pressuretext"><?php echo $xml->pressure['value'];?> hPa</p>
         </div>
       </div>
       <div class="t-sun">
@@ -79,6 +88,8 @@
           document.querySelector(".t-volumeimg").classList.remove("animation");
         }, 300);
       }
+
+      //https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47
     </script>
   </body>
 </html>
