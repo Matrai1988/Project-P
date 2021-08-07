@@ -30,9 +30,9 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
           ?>°C</p>
 
         <div class="t-minmax">
-          <p class="t-mintemperature"><?php $tmin = round($xml->temperature['min']); echo $tmin ;
+          <p class="t-mintemperature"><?php $tmin = round($xml->temperature['min'] - 0); echo $tmin ;
          ?>°C</p>
-          <p class="t-maxtemperature"><?php $tmax = round($xml->temperature['max']); echo $tmax ;
+          <p class="t-maxtemperature"><?php $tmax = round($xml->temperature['max'] - 0); echo $tmax ;
          ?>°C</p>
         </div>
       </div>
