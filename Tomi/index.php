@@ -1,5 +1,5 @@
 <?php 
-$xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47&mode=xml");
+$xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47&mode=xml&lang=hu&units=metric");
 
 
 ?>
@@ -26,14 +26,14 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
     <div class="t-weatherinfo">
       <p class="t-city"><?php echo$xml->city['name']?></p>
       <div class="t-temperaturecontainer">
-        <p class="t-temperature"><?php $tv = $xml->temperature['value'] - 273.15;
-         echo round($tv); ?>°C</p>
+        <p class="t-temperature"><?php echo $xml->temperature['value'] ;
+          ?>°C</p>
 
         <div class="t-minmax">
-          <p class="t-mintemperature"><?php $tmin = $xml->temperature['min'] - 273.15;
-         echo round($tmin); ?>°C</p>
-          <p class="t-maxtemperature"><?php $tmax = $xml->temperature['max'] - 273.15;
-         echo round($tmax); ?>°C</p>
+          <p class="t-mintemperature"><?php $tmin = round($xml->temperature['min']); echo $tmin ;
+         ?>°C</p>
+          <p class="t-maxtemperature"><?php $tmax = round($xml->temperature['max']); echo $tmax ;
+         ?>°C</p>
         </div>
       </div>
       <div class="t-etcinfo">
