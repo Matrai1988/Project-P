@@ -5,7 +5,7 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
