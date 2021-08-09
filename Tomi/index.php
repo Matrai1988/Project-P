@@ -1,6 +1,7 @@
 <?php 
 $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47&mode=xml&lang=hu&units=metric");
-
+//https://api.ipgeolocation.io/astronomy?apiKey=2080cd741e47436699bfb9752bce8d15&location=Senta,%20RS
+//https://api.ipgeolocation.io/astronomy?apiKey=2080cd741e47436699bfb9752bce8d15&lat=20.0772&long=45.9275
 
 ?>
 
@@ -26,8 +27,8 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
     <div class="t-weatherinfo">
       <p class="t-city"><?php echo$xml->city['name']?></p>
       <div class="t-temperaturecontainer">
-        <p class="t-temperature"><?php echo $xml->temperature['value'] ;
-          ?>°C</p>
+        <p class="t-temperature"><?php $tv = round($xml->temperature['value'] - 0, 1); echo $tv ;
+         ?>°C</p>
 
         <div class="t-minmax">
           <p class="t-mintemperature"><?php $tmin = round($xml->temperature['min'] - 0); echo $tmin ;
@@ -46,6 +47,7 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
           <p class="t-air-pressuretext"><?php echo $xml->pressure['value'];?> hPa</p>
         </div>
       </div>
+      <div class="t-sunmoon">
       <div class="t-sun">
         <div class="t-sunrise">
           <img src="icons/sunrise.png" />
@@ -66,6 +68,7 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
           <p>20:00</p>
         </div>
       </div>
+</div>
     </div>
 
     <script>

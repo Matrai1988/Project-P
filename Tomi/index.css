@@ -25,7 +25,6 @@ body {
 .t-weatherinfo {
   position: absolute;
   top: 0;
-  width: 600px;
   height: 100vh;
   z-index: 15;
   font-family: "Bebas Neue", cursive;
@@ -34,7 +33,7 @@ body {
 
 .t-controlbar {
   height: 55px;
-  width: 600px;
+  width: 605px;
   z-index: 16;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.63);
@@ -122,6 +121,8 @@ body {
   margin-right: auto;
   display: flex;
   justify-content: center;
+  padding: 10px;
+  border: 2px solid rgb(207, 207, 207);
 }
 
 .t-humidity {
@@ -165,10 +166,15 @@ body {
   margin-left: 10px;
 }
 
+.t-sunmoon {
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid rgb(207, 207, 207);
+}
+
 .t-sun {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
   display: flex;
   justify-content: center;
 }
