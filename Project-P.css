@@ -47,7 +47,7 @@ img {
 }
 
 .cloudy {
-  transform: translate(83%, -250%);
+  transform: translate(83px, -250px);
   box-shadow: -2px -2px 10px black;
   background-color: lightgrey;
   padding: 20px;
