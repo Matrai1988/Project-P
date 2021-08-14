@@ -23,7 +23,8 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
         <img class="t-volumeimg" src="icons/volume.png" />
       </button>
     </div>
-    <div class="t-weatherbox"></div>
+    <div class="t-weatherbox t-raincloudbg">
+    </div>
     <div class="t-weatherinfo">
       <p class="t-city"><?php echo$xml->city['name']?></p>
       <div class="t-temperaturecontainer">

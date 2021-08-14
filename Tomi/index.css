@@ -12,14 +12,29 @@ body {
 }
 
 .t-weatherbox {
-  background-image: url("sun.jpg");
-  background-repeat: no-repeat;
-  background-position: 70% 100%;
-  background-size: cover;
   filter: blur(2px) brightness(70%);
   width: 600px;
   height: 100vh;
   position: relative;
+}
+
+.t-sunbg {
+  background-image: url("sun.jpg");
+  background-repeat: no-repeat;
+  background-position: 70% 100%;
+  background-size: cover;
+}
+
+.t-raincloudbg {
+  background-image: url("raincloud.webp");
+  background-repeat: no-repeat;
+  background-position: 40%;
+  background-size: cover;
+}
+
+video {
+  transform: scale(3);
+  max-width: 600px;
 }
 
 .t-weatherinfo {
