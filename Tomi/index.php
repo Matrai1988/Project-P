@@ -19,11 +19,26 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
   <body>
     <link rel="stylesheet" href="index.css" />
     <div class="t-controlbar">
-      <button class="t-volume" onclick="csere(), animation()">
-        <img class="t-volumeimg" src="icons/volume.png" />
-      </button>
+      <p class="t-welcomemsg"><?php echo "Szép napot!"?></p>
+      <p class="t-time"></p>
     </div>
-    <div class="t-weatherbox t-raincloudbg">
+    <div class="t-weatherbox <?php 
+    $wid = $xml->weather['number'];
+      if($wid >= 200 && $wid <= 299){
+        echo "t-thunderstormbg";
+      }else if($wid >= 300 && $wid <= 399){
+        echo "t-thunderstormbg";
+      }else if($wid >= 500 && $wid <= 599){
+        echo "t-thunderstormbg";
+      }else if($wid >= 600 && $wid <= 699){
+        echo "t-thunderstormbg";
+      }else if($wid == 800 ){
+        echo "t-sunbg";
+      }else if($wid >= 801 && $wid <= 899){
+        echo "t-sunbg";
+      }else
+    
+    ?>">
     </div>
     <div class="t-weatherinfo">
       <p class="t-city"><?php echo$xml->city['name']?></p>
@@ -31,13 +46,17 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
         <p class="t-temperature"><?php $tv = round($xml->temperature['value'] - 0, 1); echo $tv ;
          ?>°C</p>
 
-        <div class="t-minmax">
-          <p class="t-mintemperature"><?php $tmin = round($xml->temperature['min'] - 0); echo $tmin ;
+
+
+
+ <!--       <div class="t-minmax">
+          <p class="t-mintemperature"><?php// $tmin = round($xml->temperature['min'] - 0); echo $tmin ;
          ?>°C</p>
-          <p class="t-maxtemperature"><?php $tmax = round($xml->temperature['max'] - 0); echo $tmax ;
+          <p class="t-maxtemperature"><?php// $tmax = round($xml->temperature['max'] - 0); echo $tmax ;
          ?>°C</p>
-        </div>
+        </div>-->
       </div>
+            <p class="t-weathertxt"><?php echo $xml->weather['value'];  ?></p>
       <div class="t-etcinfo">
         <div class="t-humidity">
           <img class="t-humidityimg" src="icons/humidity.png" />
@@ -92,6 +111,27 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
           document.querySelector(".t-volumeimg").classList.remove("animation");
         }, 300);
       }
+
+      function addZero(x,n) {
+    while (x.toString().length < n) {
+      x = "0" + x;
+    }
+    return x;
+  }
+  
+  function myFunction() {
+    var d = new Date();
+    var x = document.querySelector(".t-time");
+    var mo = d.getMonth();
+    var mo = mo + 1;
+    var da = addZero(d.getDate(), 2);
+    var h = addZero(d.getHours(), 2);
+    var m = addZero(d.getMinutes(), 2);
+    var s = addZero(d.getSeconds(), 2);
+    x.innerHTML = mo + "/" + da + " " + h + ":" + m + ":" + s;
+  }
+
+  setInterval(myFunction, 1000);
 
       //https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47
     </script>
