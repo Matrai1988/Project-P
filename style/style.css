@@ -129,6 +129,6 @@ body {
 
 @media screen and (max-width: 500px) {
   .container {
-    width: 50vh;
+    width: 55vh;
   }
 }
