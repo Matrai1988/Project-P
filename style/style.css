@@ -126,3 +126,9 @@ body {
   padding-top: 15px;
   margin-bottom: 2rem;
 }
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 50vh;
+  }
+}
