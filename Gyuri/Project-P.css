@@ -22,7 +22,7 @@
     
     .nullaska{
 
-    transform: translate(10px, 50px);
+    transform: translate(6%, 50%);
     /*border: 1px solid white;*/
     width: 350px;
     height: 210px;
@@ -81,7 +81,7 @@
     width: 130px;
     height: 120px;
     border-radius: 5px;
-    transform: translate(10px, 10px);
+    transform: translate(0%, 105%);
     box-shadow: -4px -4px 20px rgb(14, 11, 11);
     color: rgba(0,0,0,0.7);
     font-weight: bolder;
