@@ -19,7 +19,7 @@
     margin-left: 5px;
     }
     
-    .nullaska{
+    .container1{
     width: 440px;
     height: 250px;
     color: white;
@@ -34,32 +34,27 @@
     }
 
 
-    .nullnull{
-    position: relative;
-    top: -130px;
-    }
 
 
-
-    .budapest{
+    .city{
     font-size:  20px;
-    margin-top: 150px;
+    margin-top: 20px;
     position: relative;
     left: 5px;
     }
     
-    .harmincas{
+    .temperature{
     font-size: 30px;
     position: relative;
     left: 10px;
     }
     
-    .vihar{
+    .weathertext{
     position: relative;
     left: 5px;
     }
 
-    .cloudy{
+    .icon{
     box-shadow: -2px -2px 10px black;
     background-color: lightgrey;
     padding: 6px;
@@ -80,7 +75,7 @@ margin-top: 25px;
     
     
     
-    .container1{
+    .content{
     background-image: url("heavy.jpg");
     background-position: center;
     background-size: cover;
@@ -99,8 +94,7 @@ margin-top: 25px;
 
     .egyeske{
     border: 1px solid rgb(248, 245, 245);
-    margin: 0px 20px 0px 20px
-    padding: 25px;
+    
     background-color: aliceblue;
     opacity: 0.5;
     width: 130px;
