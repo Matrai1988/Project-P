@@ -19,7 +19,21 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
   <body>
     <link rel="stylesheet" href="index.css" />
     <div class="t-controlbar">
-      <p class="t-welcomemsg"><?php echo "Szép napot!"?></p>
+      <p class="t-welcomemsg"><?php 
+      $date = date("H:i");
+      if($date >= "00:00" && $date < "03:00"){
+        echo "Jó éjszakát!";
+      }else if($date >= "03:00" && $date < "09:00"){
+        echo "Jó reggelt!";
+      }else if($date >= "09:00" && $date < "19:00"){
+        echo "Szép napot!";
+      }else if($date >= "19:00" && $date < "22:00"){
+        echo "Szép estét!";
+      }else if($date >= "22:00" && $date < "23:59"){
+        echo "Jó éjszakát!";
+      }
+
+      ?></p>
       <p class="t-time"></p>
     </div>
     <div class="t-weatherbox <?php 
