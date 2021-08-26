@@ -27,15 +27,15 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
       if($wid >= 200 && $wid <= 299){
         echo "t-thunderstormbg";
       }else if($wid >= 300 && $wid <= 399){
-        echo "t-thunderstormbg";
+        echo "t-drizzlebg";
       }else if($wid >= 500 && $wid <= 599){
-        echo "t-thunderstormbg";
+        echo "t-raincloudbg";
       }else if($wid >= 600 && $wid <= 699){
-        echo "t-thunderstormbg";
+        echo "t-snowbg";
       }else if($wid == 800 ){
         echo "t-sunbg";
       }else if($wid >= 801 && $wid <= 899){
-        echo "t-sunbg";
+        echo "t-cloudbg";
       }else
     
     ?>">
