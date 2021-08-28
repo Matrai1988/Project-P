@@ -158,7 +158,11 @@ margin-top: 25px;
     right: -300px;
     }
 
+    .humidity .szazalek{
+        display:block;
+    flex-direction: row;
 
+    }
 
 
 

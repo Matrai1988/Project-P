@@ -15,8 +15,28 @@ async function getWeather() {
     homerseklet.innerHTML += Math.round(data.main.temp -0) + " °C ";
 
     let weather = document.querySelector(".weathertext");
-    weather.innerHTML += data.weather[0].description;
+    let text = data.weather[0].description[0].toUpperCase();
+    weather.innerHTML += text + data.weather[0].description.slice(1); 
+ 
+    let tempmin = document.querySelector(".tempmin");
+    tempmin.innerHTML += Math.round(data.main.temp_min) + " °C ";
+
+
+    let tempmax = document.querySelector(".tempmax");
+    tempmax.innerHTML += Math.round(data.main.temp_max) + " °C ";
+
+
+    let humidity = document.querySelector(".humidity");
+    humidity.innerHTML += (data.main.humidity)
+
+
+    let pressure = document.querySelector(".pressure");
+    pressure.innerHTML += (data.main.pressure)
+
 
 
 }
 getWeather();
+
+pressure
+humidity
