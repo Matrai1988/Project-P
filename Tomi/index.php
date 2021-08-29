@@ -1,15 +1,15 @@
 <?php 
 $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47&mode=xml&lang=hu&units=metric");
-//https://api.ipgeolocation.io/astronomy?apiKey=2080cd741e47436699bfb9752bce8d15&location=Senta,%20RS
-//https://api.ipgeolocation.io/astronomy?apiKey=2080cd741e47436699bfb9752bce8d15&lat=20.0772&long=45.9275
 
+//https://api.openweathermap.org/data/2.5/onecall?lat=45.9275&lon=20.0772&units=metric&mode=json&lang=hu&appid=a3a6e8f3dd3bbd3debaa600a7e2ac7ce;
+$jsonurl = file_get_contents('https://api.openweathermap.org/data/2.5/onecall?lat=45.9275&lon=20.0772&units=metric&mode=json&lang=hu&appid=a3a6e8f3dd3bbd3debaa600a7e2ac7ce');
+$json = json_decode($jsonurl)
 ?>
 
 <!DOCTYPE html>
 <html lang="hu">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta List="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
@@ -95,21 +95,22 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
       <div class="t-sun">
         <div class="t-sunrise">
           <img src="icons/sunrise.png" />
-          <p>6:10</p>
+          <p><?php   echo date("H:i", strtotime($xml->city->sun['rise']) + 2*60*60 );  ?></p>
         </div>
         <div class="t-sunset">
           <img src="icons/sunset.png" />
-          <p>20:00</p>
+          <p><?php   echo date("H:i", strtotime($xml->city->sun['set']) + 2*60*60 );  ?></p>
         </div>
       </div>
       <div class="t-moon">
         <div class="t-moonrise">
           <img src="icons/moonrise.png" />
-          <p>6:10</p>
+          <p> <?php   echo date("H:i", $json->daily[0]->moonrise);  ?>
+            </p>
         </div>
         <div class="t-moonset">
           <img src="icons/moonset.png" />
-          <p>20:00</p>
+          <p><?php   echo date("H:i", $json->daily[0]->moonset);  ?></p>
         </div>
       </div>
 </div>
