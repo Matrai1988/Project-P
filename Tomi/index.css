@@ -18,17 +18,52 @@ body {
   position: relative;
 }
 
+.t-thunderstormbg {
+  background-image: url("images/storm.jpg");
+  background-repeat: no-repeat;
+  background-position: 40%;
+  background-size: cover;
+}
+
+.t-drizzlebg {
+  background-image: url("images/drizzle.jpg");
+  background-repeat: no-repeat;
+  background-position: 40%;
+  background-size: cover;
+}
+
+.t-rainbg {
+  background-image: url("images/rain.jpg");
+  background-repeat: no-repeat;
+  background-position: 40%;
+  background-size: cover;
+}
+
 .t-sunbg {
-  background-image: url("sun.jpg");
+  background-image: url("images/sun.jpg");
   background-repeat: no-repeat;
   background-position: 70% 100%;
   background-size: cover;
 }
 
-.t-raincloudbg {
-  background-image: url("raincloud.webp");
+.t-clearmoonbg {
+  background-image: url("images/clearmoon.jpg");
+  background-repeat: no-repeat;
+  background-position: 0% 10%;
+  background-size: cover;
+}
+
+.t-cloudbg {
+  background-image: url("images/raincloud.webp");
   background-repeat: no-repeat;
   background-position: 40%;
+  background-size: cover;
+}
+
+.t-cloudmoonbg {
+  background-image: url("images/cloudmoon.jpg");
+  background-repeat: no-repeat;
+  background-position: 70% 100%;
   background-size: cover;
 }
 

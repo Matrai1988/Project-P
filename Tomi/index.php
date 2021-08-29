@@ -38,20 +38,30 @@ $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785
     </div>
     <div class="t-weatherbox <?php 
     $wid = $xml->weather['number'];
-      if($wid >= 200 && $wid <= 299){
+
+      /*if($wid >= 200 && $wid <= 299){
         echo "t-thunderstormbg";
       }else if($wid >= 300 && $wid <= 399){
-        echo "t-drizzlebg";
+       echo "t-drizzlebg";
       }else if($wid >= 500 && $wid <= 599){
-        echo "t-raincloudbg";
+        echo "t-rainbg";
       }else if($wid >= 600 && $wid <= 699){
         echo "t-snowbg";
       }else if($wid == 800 ){
-        echo "t-sunbg";
+        if($date < "19:00" && $date > "6:00"){
+          echo "t-sunbg";
+        }else{
+        */  echo "t-clearmoonbg";/*
+        }
+        
       }else if($wid >= 801 && $wid <= 899){
-        echo "t-cloudbg";
+         if($date < "19:00" && $date > "6:00"){
+          echo "t-cloudbg";
+        }else{
+          echo "t-cloudmoonbg";
+        }
       }else
-    
+    */
     ?>">
     </div>
     <div class="t-weatherinfo">
