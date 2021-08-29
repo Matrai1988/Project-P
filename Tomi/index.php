@@ -116,12 +116,6 @@ $json = json_decode($jsonurl)
     </div>
 
     <script>
-      function csere() {
-        var fullurl = window.location.href;
-        var link = fullurl.replace("index.php", "");
-        var link = link + "icons/";
-      }
-   
 
       function addZero(x,n) {
     while (x.toString().length < n) {
