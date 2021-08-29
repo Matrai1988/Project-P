@@ -1,7 +1,6 @@
 <?php 
 $xml=simplexml_load_file("https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47&mode=xml&lang=hu&units=metric");
 
-//https://api.openweathermap.org/data/2.5/onecall?lat=45.9275&lon=20.0772&units=metric&mode=json&lang=hu&appid=a3a6e8f3dd3bbd3debaa600a7e2ac7ce;
 $jsonurl = file_get_contents('https://api.openweathermap.org/data/2.5/onecall?lat=45.9275&lon=20.0772&units=metric&mode=json&lang=hu&appid=a3a6e8f3dd3bbd3debaa600a7e2ac7ce');
 $json = json_decode($jsonurl)
 ?>
@@ -60,7 +59,7 @@ $json = json_decode($jsonurl)
         }else{
           echo "t-cloudmoonbg";
         }
-      }else
+      }
     
     ?>">
     </div>
@@ -121,21 +120,7 @@ $json = json_decode($jsonurl)
         var fullurl = window.location.href;
         var link = fullurl.replace("index.php", "");
         var link = link + "icons/";
-
-        var x = document.querySelector(".t-volumeimg").src;
-        if (x == link + "volume.png") {
-          document.querySelector(".t-volumeimg").src = link + "no-sound.png";
-        } else {
-          document.querySelector(".t-volumeimg").src = link + "volume.png";
-        }
-      }
-
-      function animation() {
-        document.querySelector(".t-volumeimg").classList.add("animation");
-        setTimeout(function () {
-          document.querySelector(".t-volumeimg").classList.remove("animation");
-        }, 300);
-      }
+   
 
       function addZero(x,n) {
     while (x.toString().length < n) {
@@ -158,7 +143,6 @@ $json = json_decode($jsonurl)
 
   setInterval(myFunction, 1000);
 
-      //https://api.openweathermap.org/data/2.5/weather?id=785965&appid=545b1563d51e106eb6f284b4b1204d47
     </script>
   </body>
 </html>
