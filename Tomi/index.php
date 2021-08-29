@@ -120,6 +120,7 @@ $json = json_decode($jsonurl)
         var fullurl = window.location.href;
         var link = fullurl.replace("index.php", "");
         var link = link + "icons/";
+      }
    
 
       function addZero(x,n) {
