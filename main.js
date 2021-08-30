@@ -13,14 +13,14 @@ async function moonMove() {
   let date_moon = new Date(sec_moon * 1000);
   let timestr = date_moon.toLocaleTimeString();
   let moonrise = document.getElementById("moonrise");
-  moonrise.innerHTML += timestr;
+  moonrise.innerHTML = timestr.slice(0,5);
   
 //Holdnyugta kiitarása//
   let sec_moon2 = data_moon.daily[0].moonset;
   let date_moon2 = new Date(sec_moon2 * 1000);
   let timestr2 = date_moon2.toLocaleTimeString();
   let moonset = document.getElementById("moonset");
-  moonset.innerHTML += timestr2;
+  moonset.innerHTML = timestr2.slice(0,5);
 }
 
 //Elkészítem a 'getWeather' függvényt //
