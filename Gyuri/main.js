@@ -2,11 +2,21 @@
 
 const weather_url =
   "https://api.openweathermap.org/data/2.5/weather?id=7284830&units=metric&lang=hu&appid=a3a6e8f3dd3bbd3debaa600a7e2ac7ce"; 
+const secondWeather_url =
+  "https://api.openweathermap.org/data/2.5/onecall?lat=47.580264&lon=19.101505&units=metric&mode=json&lang=hu&appid=a3a6e8f3dd3bbd3debaa600a7e2ac7ce";
 
 async function getWeather() {
     const respone = await fetch(weather_url);
     const data = await respone.json();
     console.log("Adatok feldolgozasahoz:", data); 
+
+    const respone2 = await fetch(secondWeather_url);
+    const data2 = await respone2.json();
+
+
+
+
+
 
     let city_name = document.querySelector(".city");
     city_name.innerHTML = data.name;
@@ -34,6 +44,47 @@ async function getWeather() {
     pressure.innerHTML = data.main.pressure + " hPh";
 
 
+    let napkelte = document.querySelector(".napkelte");
+    let napkelteido = new Date(data.sys.sunrise * 1000);
+    napkelte.innerHTML = napkelteido.toLocaleTimeString();
+
+    let napnyugta = document.querySelector(".napnyugta");
+    let napnyugtaido = new Date(data.sys.sunset * 1000);
+    napnyugta.innerHTML = napnyugtaido.toLocaleTimeString();
+
+
+    let holdkelte = document.querySelector(".holdkelte");
+    let holdkelteido = new Date(data2.daily[0].moonrise * 1000);
+    holdkelte.innerHTML = holdkelteido.toLocaleTimeString();
+    
+
+
+    let holdnyugta = document.querySelector(".holdnyugta");
+    let holdnyugtaido = new Date(data2.daily[0].moonset * 1000);
+    holdnyugta.innerHTML = holdnyugtaido.toLocaleTimeString();
+   
+
+
+    
+    if (200 <= data.weather[0].id && data.weather[0].id>=299) {
+
+    } else if (300 <= data.weather[0].id && data.weather[0].id>=399) {
+
+    } else if (500 <= data.weather[0].id && data.weather[0].id>=599) {
+
+    } else if (600 <= data.weather[0].id && data.weather[0].id>=699) {
+
+    } else if (700 <= data.weather[0].id && data.weather[0].id>=799) {
+      document.querySelector(".");
+    } else if (data.weather[0].id==800) {
+      document.querySelector(".icon").style.content = "url(sunny.png)";
+      
+    } else if (data.weather[0].id>800 && data.weather[0].id<899) {}
+    
+
+    
+
+    
 
 }
 getWeather(); 
