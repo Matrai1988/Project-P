@@ -65,16 +65,16 @@ async function getWeather() {
    
 
 
-    
-    if (200 <= data.weather[0].id && data.weather[0].id>=299) {
 
-    } else if (300 <= data.weather[0].id && data.weather[0].id>=399) {
-
-    } else if (500 <= data.weather[0].id && data.weather[0].id>=599) {
-
-    } else if (600 <= data.weather[0].id && data.weather[0].id>=699) {
-
-    } else if (700 <= data.weather[0].id && data.weather[0].id>=799) {
+    if (200 <= data.weather[0].id && data.weather[0].id<=299) {
+      document.querySelector(".icon").style.content = "url(thunderstrorm.png)";
+    } else if (300 <= data.weather[0].id && data.weather[0].id<=399) {
+      document.querySelector(".icon").style.content = "url(rainy.png)";
+    } else if (500 <= data.weather[0].id && data.weather[0].id<=599) {
+      document.querySelector(".icon").style.content = "url(sunny.png)";
+    } else if (600 <= data.weather[0].id && data.weather[0].id<=699) {
+      document.querySelector(".icon").style.content = "url(snow.png)"; 
+    } else if (700 <= data.weather[0].id && data.weather[0].id<=799) {
       document.querySelector(".");
     } else if (data.weather[0].id==800) {
       document.querySelector(".icon").style.content = "url(sunny.png)";
